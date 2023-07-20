@@ -1,0 +1,20 @@
+[2023-07-20T14:40:32.422+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.extract_data manual__2023-07-20T14:40:30.790213+00:00 [queued]>
+[2023-07-20T14:40:32.669+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.extract_data manual__2023-07-20T14:40:30.790213+00:00 [queued]>
+[2023-07-20T14:40:32.671+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-20T14:40:32.718+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): extract_data> on 2023-07-20 14:40:30.790213+00:00
+[2023-07-20T14:40:32.728+0000] {standard_task_runner.py:57} INFO - Started process 229 to run task
+[2023-07-20T14:40:32.738+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'extract_data', 'manual__2023-07-20T14:40:30.790213+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmpin0c_3j8']
+[2023-07-20T14:40:32.746+0000] {standard_task_runner.py:85} INFO - Job 81: Subtask extract_data
+[2023-07-20T14:40:32.867+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.extract_data manual__2023-07-20T14:40:30.790213+00:00 [running]> on host 90317fb99301
+[2023-07-20T14:40:33.093+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='fvinciguerra' AIRFLOW_CTX_DAG_ID='ETL_stock_data_google_DAG' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-20T14:40:30.790213+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-20T14:40:30.790213+00:00'
+[2023-07-20T14:40:33.096+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-07-20T14:40:33.098+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/pyscripts/Extract_stock_data_google.py']
+[2023-07-20T14:40:33.119+0000] {subprocess.py:86} INFO - Output:
+[2023-07-20T14:40:35.883+0000] {subprocess.py:93} INFO - 2023-07-20 14:40:35,883 - INFO - Iniciando extracción de datos...
+[2023-07-20T14:40:48.112+0000] {subprocess.py:93} INFO - 2023-07-20 14:40:48,111 - ERROR - GOOG: No price data found, symbol may be delisted (period=1y)
+[2023-07-20T14:40:48.114+0000] {subprocess.py:93} INFO - 2023-07-20 14:40:48,113 - INFO - Extracción de datos completada.
+[2023-07-20T14:40:48.181+0000] {subprocess.py:93} INFO - 2023-07-20 14:40:48,180 - INFO - Datos extraídos guardados exitosamente.
+[2023-07-20T14:40:48.389+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-07-20T14:40:48.488+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=ETL_stock_data_google_DAG, task_id=extract_data, execution_date=20230720T144030, start_date=20230720T144032, end_date=20230720T144048
+[2023-07-20T14:40:48.544+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-20T14:40:48.612+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,32 @@
+[2023-07-18 16:23:58,923] {taskinstance.py:1043} INFO - Dependencies all met for <TaskInstance: ETL_stock_data_google_DAG.execute_python_script manual__2023-07-18T16:23:58.130772+00:00 [queued]>
+[2023-07-18 16:23:58,954] {taskinstance.py:1043} INFO - Dependencies all met for <TaskInstance: ETL_stock_data_google_DAG.execute_python_script manual__2023-07-18T16:23:58.130772+00:00 [queued]>
+[2023-07-18 16:23:58,956] {taskinstance.py:1249} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-18 16:23:58,957] {taskinstance.py:1250} INFO - Starting attempt 1 of 1
+[2023-07-18 16:23:58,958] {taskinstance.py:1251} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-18 16:23:58,987] {taskinstance.py:1270} INFO - Executing <Task(BashOperator): execute_python_script> on 2023-07-18 16:23:58.130772+00:00
+[2023-07-18 16:23:58,995] {standard_task_runner.py:52} INFO - Started process 578 to run task
+[2023-07-18 16:23:59,005] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'execute_python_script', 'manual__2023-07-18T16:23:58.130772+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmp91if33_n', '--error-file', '/tmp/tmpl9babva4']
+[2023-07-18 16:23:59,008] {standard_task_runner.py:80} INFO - Job 56: Subtask execute_python_script
+[2023-07-18 16:23:59,141] {logging_mixin.py:109} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.execute_python_script manual__2023-07-18T16:23:58.130772+00:00 [running]> on host 6253e3d8f871
+[2023-07-18 16:23:59,268] {taskinstance.py:1446} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=fvinciguerra
+AIRFLOW_CTX_DAG_ID=ETL_stock_data_google_DAG
+AIRFLOW_CTX_TASK_ID=execute_python_script
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-18T16:23:58.130772+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-18T16:23:58.130772+00:00
+[2023-07-18 16:23:59,271] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-07-18 16:23:59,274] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python /opt/***/dags/pyscripts/"ETL_stock_data_google v2".py']
+[2023-07-18 16:23:59,286] {subprocess.py:85} INFO - Output:
+[2023-07-18 16:24:03,222] {subprocess.py:89} INFO - 2023-07-18 16:24:03,222 - INFO - Iniciando extracción de datos...
+[2023-07-18 16:24:04,436] {subprocess.py:89} INFO - 2023-07-18 16:24:04,435 - INFO - Extracción de datos completada.
+[2023-07-18 16:24:04,442] {subprocess.py:89} INFO - 2023-07-18 16:24:04,441 - INFO - Iniciando transformación de datos...
+[2023-07-18 16:24:04,475] {subprocess.py:89} INFO - 2023-07-18 16:24:04,475 - INFO - Transformación de datos completada.
+[2023-07-18 16:24:04,477] {subprocess.py:89} INFO - 2023-07-18 16:24:04,475 - INFO - Iniciando carga de datos...
+[2023-07-18 16:24:07,468] {subprocess.py:89} INFO - 2023-07-18 16:24:07,467 - ERROR - Error: "['Date'] not in index"
+[2023-07-18 16:24:07,567] {subprocess.py:93} INFO - Command exited with return code 0
+[2023-07-18 16:24:07,603] {taskinstance.py:1278} INFO - Marking task as SUCCESS. dag_id=ETL_stock_data_google_DAG, task_id=execute_python_script, execution_date=20230718T162358, start_date=20230718T162358, end_date=20230718T162407
+[2023-07-18 16:24:07,634] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-07-18 16:24:07,690] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

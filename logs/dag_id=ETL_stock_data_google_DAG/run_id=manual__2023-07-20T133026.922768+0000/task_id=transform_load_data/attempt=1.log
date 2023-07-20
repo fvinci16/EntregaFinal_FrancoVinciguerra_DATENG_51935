@@ -1,0 +1,26 @@
+[2023-07-20T13:30:34.830+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.transform_load_data manual__2023-07-20T13:30:26.922768+00:00 [queued]>
+[2023-07-20T13:30:34.981+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.transform_load_data manual__2023-07-20T13:30:26.922768+00:00 [queued]>
+[2023-07-20T13:30:34.983+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-20T13:30:35.017+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): transform_load_data> on 2023-07-20 13:30:26.922768+00:00
+[2023-07-20T13:30:35.026+0000] {standard_task_runner.py:57} INFO - Started process 201 to run task
+[2023-07-20T13:30:35.032+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'transform_load_data', 'manual__2023-07-20T13:30:26.922768+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmpk7wavjry']
+[2023-07-20T13:30:35.038+0000] {standard_task_runner.py:85} INFO - Job 73: Subtask transform_load_data
+[2023-07-20T13:30:35.144+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.transform_load_data manual__2023-07-20T13:30:26.922768+00:00 [running]> on host 90317fb99301
+[2023-07-20T13:30:35.329+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='fvinciguerra' AIRFLOW_CTX_DAG_ID='ETL_stock_data_google_DAG' AIRFLOW_CTX_TASK_ID='transform_load_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-20T13:30:26.922768+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-20T13:30:26.922768+00:00'
+[2023-07-20T13:30:35.332+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-07-20T13:30:35.337+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/pyscripts/TransformationLoad_stock_data_google.py']
+[2023-07-20T13:30:35.356+0000] {subprocess.py:86} INFO - Output:
+[2023-07-20T13:30:35.613+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-07-20T13:30:35.614+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/pyscripts/TransformationLoad_stock_data_google.py", line 1, in <module>
+[2023-07-20T13:30:35.616+0000] {subprocess.py:93} INFO -     import logging121245wdsadsa
+[2023-07-20T13:30:35.619+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'logging121245wdsadsa'
+[2023-07-20T13:30:35.623+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-07-20T13:30:35.645+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-07-20T13:30:35.659+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=ETL_stock_data_google_DAG, task_id=transform_load_data, execution_date=20230720T133026, start_date=20230720T133034, end_date=20230720T133035
+[2023-07-20T13:30:35.687+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 73 for task transform_load_data (Bash command failed. The command returned a non-zero exit code 1.; 201)
+[2023-07-20T13:30:35.730+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-20T13:30:35.810+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

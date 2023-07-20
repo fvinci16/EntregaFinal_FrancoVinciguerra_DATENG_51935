@@ -1,0 +1,14 @@
+[2023-07-20T14:50:23.445+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.dag_envio_success manual__2023-07-20T14:49:21.867555+00:00 [queued]>
+[2023-07-20T14:50:23.550+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.dag_envio_success manual__2023-07-20T14:49:21.867555+00:00 [queued]>
+[2023-07-20T14:50:23.551+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-20T14:50:23.565+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): dag_envio_success> on 2023-07-20 14:49:21.867555+00:00
+[2023-07-20T14:50:23.570+0000] {standard_task_runner.py:57} INFO - Started process 233 to run task
+[2023-07-20T14:50:23.573+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'dag_envio_success', 'manual__2023-07-20T14:49:21.867555+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmp5t_993_u']
+[2023-07-20T14:50:23.575+0000] {standard_task_runner.py:85} INFO - Job 93: Subtask dag_envio_success
+[2023-07-20T14:50:23.618+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.dag_envio_success manual__2023-07-20T14:49:21.867555+00:00 [running]> on host 90317fb99301
+[2023-07-20T14:50:23.689+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='fvinciguerra' AIRFLOW_CTX_DAG_ID='ETL_stock_data_google_DAG' AIRFLOW_CTX_TASK_ID='dag_envio_success' AIRFLOW_CTX_EXECUTION_DATE='2023-07-20T14:49:21.867555+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-20T14:49:21.867555+00:00'
+[2023-07-20T14:50:25.853+0000] {logging_mixin.py:149} INFO - Exito al enviar el mail
+[2023-07-20T14:50:25.855+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-20T14:50:25.864+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=ETL_stock_data_google_DAG, task_id=dag_envio_success, execution_date=20230720T144921, start_date=20230720T145023, end_date=20230720T145025
+[2023-07-20T14:50:25.922+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-20T14:50:25.944+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

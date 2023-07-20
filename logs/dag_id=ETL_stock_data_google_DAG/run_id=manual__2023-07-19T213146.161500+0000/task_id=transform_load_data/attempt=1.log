@@ -1,0 +1,21 @@
+[2023-07-19T21:31:51.213+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.transform_load_data manual__2023-07-19T21:31:46.161500+00:00 [queued]>
+[2023-07-19T21:31:51.225+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.transform_load_data manual__2023-07-19T21:31:46.161500+00:00 [queued]>
+[2023-07-19T21:31:51.226+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-19T21:31:51.241+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): transform_load_data> on 2023-07-19 21:31:46.161500+00:00
+[2023-07-19T21:31:51.245+0000] {standard_task_runner.py:57} INFO - Started process 206 to run task
+[2023-07-19T21:31:51.248+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'transform_load_data', 'manual__2023-07-19T21:31:46.161500+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmptvov75ux']
+[2023-07-19T21:31:51.251+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask transform_load_data
+[2023-07-19T21:31:51.306+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.transform_load_data manual__2023-07-19T21:31:46.161500+00:00 [running]> on host 90317fb99301
+[2023-07-19T21:31:51.396+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='fvinciguerra' AIRFLOW_CTX_DAG_ID='ETL_stock_data_google_DAG' AIRFLOW_CTX_TASK_ID='transform_load_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-19T21:31:46.161500+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-19T21:31:46.161500+00:00'
+[2023-07-19T21:31:51.398+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-07-19T21:31:51.399+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/pyscripts/TransformationLoad_stock_data_google.py']
+[2023-07-19T21:31:51.409+0000] {subprocess.py:86} INFO - Output:
+[2023-07-19T21:31:52.820+0000] {subprocess.py:93} INFO - 2023-07-19 21:31:52,819 - INFO - Iniciando transformación de datos...
+[2023-07-19T21:31:52.855+0000] {subprocess.py:93} INFO - 2023-07-19 21:31:52,854 - INFO - Transformación de datos completada.
+[2023-07-19T21:31:52.856+0000] {subprocess.py:93} INFO - 2023-07-19 21:31:52,855 - INFO - Iniciando carga de datos...
+[2023-07-19T21:32:52.834+0000] {subprocess.py:93} INFO - 2023-07-19 21:32:52,834 - INFO - Carga de datos completada.
+[2023-07-19T21:32:52.836+0000] {subprocess.py:93} INFO - 2023-07-19 21:32:52,834 - INFO - La inserción de 'stock_data' se completó exitosamente
+[2023-07-19T21:32:52.919+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-07-19T21:32:52.962+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=ETL_stock_data_google_DAG, task_id=transform_load_data, execution_date=20230719T213146, start_date=20230719T213151, end_date=20230719T213252
+[2023-07-19T21:32:53.161+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-19T21:32:53.183+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

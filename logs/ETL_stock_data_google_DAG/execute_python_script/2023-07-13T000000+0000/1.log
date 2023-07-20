@@ -1,0 +1,42 @@
+[2023-07-14 18:59:23,092] {taskinstance.py:1043} INFO - Dependencies all met for <TaskInstance: ETL_stock_data_google_DAG.execute_python_script scheduled__2023-07-13T00:00:00+00:00 [queued]>
+[2023-07-14 18:59:23,102] {taskinstance.py:1043} INFO - Dependencies all met for <TaskInstance: ETL_stock_data_google_DAG.execute_python_script scheduled__2023-07-13T00:00:00+00:00 [queued]>
+[2023-07-14 18:59:23,103] {taskinstance.py:1249} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-14 18:59:23,104] {taskinstance.py:1250} INFO - Starting attempt 1 of 1
+[2023-07-14 18:59:23,104] {taskinstance.py:1251} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-14 18:59:23,123] {taskinstance.py:1270} INFO - Executing <Task(BashOperator): execute_python_script> on 2023-07-13 00:00:00+00:00
+[2023-07-14 18:59:23,127] {standard_task_runner.py:52} INFO - Started process 168 to run task
+[2023-07-14 18:59:23,131] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'execute_python_script', 'scheduled__2023-07-13T00:00:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmp9ssk5dml', '--error-file', '/tmp/tmp4q_wc_ib']
+[2023-07-14 18:59:23,132] {standard_task_runner.py:80} INFO - Job 38: Subtask execute_python_script
+[2023-07-14 18:59:23,186] {logging_mixin.py:109} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.execute_python_script scheduled__2023-07-13T00:00:00+00:00 [running]> on host a917c5d777dc
+[2023-07-14 18:59:23,248] {taskinstance.py:1446} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=fvinciguerra
+AIRFLOW_CTX_DAG_ID=ETL_stock_data_google_DAG
+AIRFLOW_CTX_TASK_ID=execute_python_script
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-13T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-07-13T00:00:00+00:00
+[2023-07-14 18:59:23,250] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-07-14 18:59:23,252] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python /opt/***/dags/pyscripts/ETL_stock_data_google.py']
+[2023-07-14 18:59:23,262] {subprocess.py:85} INFO - Output:
+[2023-07-14 18:59:59,422] {local_task_job.py:82} ERROR - Received SIGTERM. Terminating subprocesses
+[2023-07-14 18:59:59,438] {process_utils.py:120} INFO - Sending Signals.SIGTERM to group 168. PIDs of all processes in the group: [169, 168]
+[2023-07-14 18:59:59,443] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 168
+[2023-07-14 18:59:59,444] {taskinstance.py:1430} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-07-14 18:59:59,445] {subprocess.py:99} INFO - Sending SIGTERM signal to process group
+[2023-07-14 18:59:59,460] {taskinstance.py:1774} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 178, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 87, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b''):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1432, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2023-07-14 18:59:59,468] {taskinstance.py:1278} INFO - Marking task as FAILED. dag_id=ETL_stock_data_google_DAG, task_id=execute_python_script, execution_date=20230713T000000, start_date=20230714T185923, end_date=20230714T185959
+[2023-07-14 18:59:59,487] {standard_task_runner.py:93} ERROR - Failed to execute job 38 for task execute_python_script (Task received SIGTERM signal; 168)
+[2023-07-14 18:59:59,496] {process_utils.py:70} INFO - Process psutil.Process(pid=168, status='terminated', exitcode=1, started='18:59:22') (168) terminated with exit code 1
+[2023-07-14 18:59:59,497] {process_utils.py:70} INFO - Process psutil.Process(pid=169, status='terminated', started='18:59:22') (169) terminated with exit code None
+[2023-07-14 18:59:59,498] {local_task_job.py:154} INFO - Task exited with return code 143
+[2023-07-14 18:59:59,521] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,5 @@
+redshift_connector
+apache-airflow[amazon]
+apache-airflow-providers-amazon
+yfinance
+pandas

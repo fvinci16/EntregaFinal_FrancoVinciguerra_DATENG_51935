@@ -1,0 +1,32 @@
+[2023-07-19T20:59:59.140+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.send_completion_email manual__2023-07-19T20:58:53.176455+00:00 [queued]>
+[2023-07-19T20:59:59.253+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_stock_data_google_DAG.send_completion_email manual__2023-07-19T20:58:53.176455+00:00 [queued]>
+[2023-07-19T20:59:59.254+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-19T20:59:59.273+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): send_completion_email> on 2023-07-19 20:58:53.176455+00:00
+[2023-07-19T20:59:59.276+0000] {standard_task_runner.py:57} INFO - Started process 253 to run task
+[2023-07-19T20:59:59.280+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_stock_data_google_DAG', 'send_completion_email', 'manual__2023-07-19T20:58:53.176455+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/ETL_stock_data_google_DAG.py', '--cfg-path', '/tmp/tmpa0sgrqls']
+[2023-07-19T20:59:59.285+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask send_completion_email
+[2023-07-19T20:59:59.341+0000] {task_command.py:410} INFO - Running <TaskInstance: ETL_stock_data_google_DAG.send_completion_email manual__2023-07-19T20:58:53.176455+00:00 [running]> on host 90317fb99301
+[2023-07-19T20:59:59.437+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='fvinciguerra' AIRFLOW_CTX_DAG_ID='ETL_stock_data_google_DAG' AIRFLOW_CTX_TASK_ID='send_completion_email' AIRFLOW_CTX_EXECUTION_DATE='2023-07-19T20:58:53.176455+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-19T20:58:53.176455+00:00'
+[2023-07-19T20:59:59.452+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ETL_stock_data_google_DAG.py", line 38, in send_completion_email
+    server.starttls()
+  File "/usr/local/lib/python3.8/smtplib.py", line 767, in starttls
+    self.ehlo_or_helo_if_needed()
+  File "/usr/local/lib/python3.8/smtplib.py", line 609, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "/usr/local/lib/python3.8/smtplib.py", line 449, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "/usr/local/lib/python3.8/smtplib.py", line 376, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "/usr/local/lib/python3.8/smtplib.py", line 363, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+[2023-07-19T20:59:59.476+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=ETL_stock_data_google_DAG, task_id=send_completion_email, execution_date=20230719T205853, start_date=20230719T205959, end_date=20230719T205959
+[2023-07-19T20:59:59.494+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 12 for task send_completion_email (please run connect() first; 253)
+[2023-07-19T20:59:59.539+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-19T20:59:59.556+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
